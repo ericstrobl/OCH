@@ -9,7 +9,7 @@ nO = 1000
 
 MSE = array(0,c(10,1000,length(ds),length(props)))
 Time = array(0,c(10,1000,length(ds),length(props)))
-for (t in 497:1000){ #907
+for (t in 1:500){ #907
   print(t)
   for (d in 1:length(ds)){
     for (p in 1:length(props)){
