@@ -1,4 +1,4 @@
-DCH_LM <- function(tR,xR,yR,
+OCH12_LM <- function(tR,xR,yR,
                 tO,xO,yO,mO,
                 xT){
   
