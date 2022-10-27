@@ -1,4 +1,4 @@
-DMD <- function(tR,xR,yR,
+OCHd <- function(tR,xR,yR,
                 tO,xO,yO,mO,
                 xT,lb=-Inf,ub=Inf,discrete=FALSE){
   
