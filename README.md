@@ -31,3 +31,5 @@ Also run OCH_1:
 Also run OCH_d:
 
 > pred = OCHd(tR,xR,yR,tO,xO,yO,mOt,xT=xO)
+
+> ## pred = OCHd_LSPC(tR,xR,yR,tO,xO,yO,mOt,xT=xO) ## use this function for discrete response, does not work with synthetic data
