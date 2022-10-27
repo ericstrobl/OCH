@@ -40,6 +40,6 @@ Also run OCH_1:
 
 Also run OCH_d:
 
-> pred = OCHd(tR,xR,yR,tO,xO,yO,mOt,xT=xO)
+> pred = OCHd(tR,xR,yR,tO,xO,yO,mO,xT=xO)
 
 Can also use OCHd_LSPC function for discrete response.
