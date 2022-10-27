@@ -54,13 +54,12 @@ OCH12 <- function(tR,xR,yR,
   # plot(xR,gRft)
   
   ## Observational components  
-  gOf = matrix(1,nR,3)
-  gTf = matrix(1,nT,3)
-  cnt=0
-  for(m in 0:1){
+  gOf = matrix(0,nR,3)
+  gTf = matrix(0,nT,3)
+  cnt = 0
+  for(m in unique(mO)){
     
     if (m == 0){
-      
       cnt = cnt + 1
       iX = which(mO==m)
       nX = length(iX)
@@ -86,9 +85,8 @@ OCH12 <- function(tR,xR,yR,
         
       }
       
-      # plot(xR,gOf[,1])
-      
     } else {
+      cnt = 1
       for (t in 0:1){
         cnt = cnt + 1
         iX = which(mO==m & tO==t)
@@ -118,24 +116,14 @@ OCH12 <- function(tR,xR,yR,
     }
   }
   
-  # plot(xR,gOf[,3])
-  
-  gOff = matrix(1,nR,2)
-  gTff = matrix(1,nT,2)
+  gOff = matrix(0,nR,2)
+  gTff = matrix(0,nT,2)
   
   gOff[,1] = gOf[,3] - gOf[,1]
   gOff[,2] = -gOf[,2] + gOf[,1]
 
   gTff[,1] = gTf[,3] - gTf[,1]
   gTff[,2] = -gTf[,2] + gTf[,1]
-  
-  # gOff[,1] = gOf[,3]
-  # gOff[,2] = -gOf[,2]
-  # 
-  # gTff[,1] = gTf[,3]
-  # gTff[,2] = -gTf[,2]
-  
-  # plot(xR,gOff[,1]*0.3449493 + gOff[,2]*0.7701808)
   
   Ii = diag(2)
 
@@ -147,19 +135,9 @@ OCH12 <- function(tR,xR,yR,
   beta = as.matrix(solve.QP(Dmat, dvec, Amat, bvec)$solution)
   
   # print(beta)
-  
   # plot(xR,gOff[,1]*beta[1] + gOff[,2]*beta[2])
   
   pF= gTff %*% beta
-  
-  #final prediction model
-  # print(gTf)
-  # 
-  # 
-  # 
-  # print(beta + betas)
-  # points(rowSums(xT),pF,col="blue")
-  
   
   return (pF)
   
