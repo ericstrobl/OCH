@@ -8,6 +8,16 @@ The OCH algorithms exploit the above concept to extrapolate RCTs. The algorithms
 
 The ``Experiments`` folder contains code to replicate the experimental results for the synthetic data. The real STARD and TEOSS/CATIE datasets used in the paper require approval from the NIMH Data Archive (https://nda.nih.gov/). Please cite the article if you use any of the code in this repository.
 
+# Installation
+
+Press the green button up top and download the zip file. Then:
+
+> library(devtools)
+
+> install_local("Directory of OCH-main.zip")
+
+> library(OCH)
+
 # Run the OCH Algorithms
 
 Generate RCT data with 100 samples, observational data with 1000 samples, 5 predictors, and exclude 90% of patients from the RCT:
