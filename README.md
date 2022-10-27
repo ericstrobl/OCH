@@ -12,11 +12,11 @@ The ``Experiments`` folder contains code to replicate the experimental results f
 
 Generate RCT data with 100 samples, observational data with 1000 samples, 5 predictors, and exclude 90% of patients from the RCT:
 
-> data = get_RCT_OBS_data <- function(nR=100,nO=1000,d=5,prop=0.9)
+> data = get_RCT_OBS_data <- function(nR=100, nO=1000, d=5, prop=0.9)
 
 > tR = data$tR; xR = data$xR; yR = data$yR ## treatment, predictors and response for RCT
 
-> tO = data$tO; xO = data$xO; yO = data$yO; mO = data$mO ## treatment, predictors, response and time step for observational data
+> tO = data$tO; xO = data$xO; yO = data$yO; mO = data$mO ## treatment, predictors, response and time steps for observational data
 
 Run OCH_2 and predicting on all patients in observational data:
 
