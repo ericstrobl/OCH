@@ -24,10 +24,10 @@ Run OCH_2 and predicting on all patients in observational data:
 
 Also run OCH_1:
 
-> m1 = which(mO==1)
+> m1 = which(mO==1) ## only use second time step, i.e., after treatment assignment
 
 > pred = OCH12(tR,xR,yR, tO[m1],xO[m1,],yO[m1],mOt,xT=xO)
 
 Also run OCH_d:
 
-> pred = OCHd(tR,xR,yR,tO[m1],xO[m1,],yO[m1],mOt,xT=xO)
+> pred = OCHd(tR,xR,yR,tO,xO,yO,mOt,xT=xO)
