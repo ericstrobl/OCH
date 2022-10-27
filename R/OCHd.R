@@ -2,7 +2,7 @@ OCHd <- function(tR,xR,yR,
                 tO,xO,yO,mO,
                 xT,lb=-Inf,ub=Inf,discrete=FALSE){
   
-  xR = as.matrix(xR)
+   xR = as.matrix(xR)
   xO = as.matrix(xO)
   xT = as.matrix(xT)
   
