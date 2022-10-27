@@ -81,8 +81,5 @@ get_RCT_OBS_data <- function(nR,nO,d,prop){
   yR[(iX0[i0==0])[ii==0]] = yRt[(iX0[i0==0])[ii==0],1] + sqrt(0.1)*rnorm(length((iX0[i0==0])[ii==0]))# T=1, ineffective
   
   
-  yOR = yOt[,4]*b1 - yOt[,3]*b2 + (yOt[,2]*0.5 + yOt[,1]*0.5)*(b2-b1)
-  
-  
   return(list(xR=xR,yR=yR,tR=tR,xO=xO,yO=yO,tO=tO,mO=mO))
 }
