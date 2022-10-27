@@ -10,3 +10,24 @@ The ``Experiments`` folder contains code to replicate the experimental results f
 
 # Run the OCH Algorithms
 
+Generate RCT data with 100 samples, observational data with 1000 samples, 5 predictors, and exclude 90% of patients from the RCT:
+
+> data = get_RCT_OBS_data <- function(nR=100,nO=1000,d=5,prop=0.9)
+
+> tR = data$tR; xR = data$xR; yR = data$yR ## treatment, predictors and response for RCT
+
+> tO = data$tO; xO = data$xO; yO = data$yO; mO = data$mO ## treatment, predictors, response and time step for observational data
+
+Run OCH_2 and predicting on all patients in observational data:
+
+> pred = OCH12(tR,xR,yR,tO,xO,yO,mO,xT=xO)
+
+Also run OCH_1:
+
+> m1 = which(mO==1)
+
+> pred = OCH12(tR,xR,yR, tO[m1],xO[m1,],yO[m1],mOt,xT=xO)
+
+Also run OCH_d:
+
+> pred = OCHd(tR,xR,yR,tO[m1],xO[m1,],yO[m1],mOt,xT=xO)
