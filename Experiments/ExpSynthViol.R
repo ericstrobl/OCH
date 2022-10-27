@@ -113,7 +113,7 @@ for (t in 1:500){ #907
       ###
       ptm = proc.time()
       
-      MSE[1,t,d,p] = mean( (yOR - DCH(tR,xR,yR,tO,xO,yO,mO,xT=xO) )^2)
+      MSE[1,t,d,p] = mean( (yOR - OCH12(tR,xR,yR,tO,xO,yO,mO,xT=xO) )^2)
       Time[1,t,d,p] = (proc.time() - ptm)[3]
       
       ptm = proc.time()
@@ -147,7 +147,7 @@ for (t in 1:500){ #907
       
       mOt = mO[m1]
       ptm = proc.time()
-      MSE[8,t,d,p] = mean( (yOR - DCH(tR,xR,yR,
+      MSE[8,t,d,p] = mean( (yOR - OCH12(tR,xR,yR,
                                       tO[m1],xO[m1,],yO[m1],mOt,
                                       xT=xO))^2)
       Time[8,t,d,p] = (proc.time() - ptm)[3]
