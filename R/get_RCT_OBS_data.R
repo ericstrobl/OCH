@@ -2,7 +2,7 @@ get_RCT_OBS_data <- function(nR,nO,d,prop){
   
   
   xR = matrix(runif(nR*d)*2-1,nR,d)
-  xR[,1] = runifI2(nR,-1+props*2,1) ###
+  xR[,1] = runifI2(nR,-1+prop*2,1) ###
   tR = c(rep(0,nR/2),rep(1,nR/2))
   
   xO = matrix(runif(nO*d)*2-1,nO,d)
