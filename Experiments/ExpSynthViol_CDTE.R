@@ -12,7 +12,7 @@ nO = 1000
 
 MISE = array(0,c(10,1000,length(ds),length(props)))
 Time = array(0,c(10,1000,length(ds),length(props)))
-for (t in 90:1000){ #907
+for (t in 1:100){ #907
   print(t)
   for (d in 1:length(ds)){
     for (p in 1:length(props)){
@@ -144,7 +144,7 @@ for (t in 90:1000){ #907
       ## DMD unconstrained
       numCores <- detectCores()-1; registerDoParallel(numCores)
       ptm = proc.time()
-      out = DMD_LM(tR,xR,yR,tO,xO,yO,mO,xT=xO)
+      out = OCHd_LM(tR,xR,yR,tO,xO,yO,mO,xT=xO)
       MISE[4,t,d,p] = compute_MISE(out$dens1, out$dens0,out$y[2]-out$y[1],out$y,yOt,b1,b0)
       Time[4,t,d,p] = (proc.time() - ptm)[3]
       stopImplicitCluster()
@@ -158,11 +158,4 @@ for (pp in 1:6){
   print(median(MISE[3,1:100,,pp]))
   # print(skewness(MISE[4,1:100,,pp]))
   # print(median.test(MISE[1,1:100,2,],MISE[2,1:100,2,]))
-}
-
-ms = c()
-for (t in 1:4){
-  bt = sample(1:500,500,replace=TRUE)
-  # ms = c(ms, median(MSE[8,bt,1:4,1]))
-  
 }
