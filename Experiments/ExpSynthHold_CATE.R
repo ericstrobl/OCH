@@ -138,19 +138,19 @@ for (t in 1:500){ #907
 
 
       ptm = proc.time()
-      MSE[9,t,d,p] = mean( (yOR - DCH_LM(tR,xR,yR,
+      MSE[9,t,d,p] = mean( (yOR - OCH12_LM(tR,xR,yR,
                                             tO,xO,yO,mO,
                                             xT=xO))^2)
       Time[9,t,d,p] = (proc.time() - ptm)[3]
       
       ptm = proc.time()
-      MSE[10,t,d,p] = mean( (yOR - DCH_LM(tR,xR,yR,
+      MSE[10,t,d,p] = mean( (yOR - OCH12_LM(tR,xR,yR,
                                           tO[m1],xO[m1,],yO[m1],mOt,
                                           xT=xO))^2)
       Time[10,t,d,p] = (proc.time() - ptm)[3]
     }
   }
-  save(MSE,Time, file="ExpSynth_DCH2.RData")
+  save(MSE,Time, file="ExpSynth_OCH12.RData")
 }
 
 library(e1071)  
