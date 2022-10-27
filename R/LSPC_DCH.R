@@ -1,4 +1,4 @@
-LSPC_DCH <- function(K_tr,y_tr,y_trm,K_te,cy){
+LSPC_OCHd <- function(K_tr,y_tr,y_trm,K_te,cy){
   
   n = nrow(K_tr)
   
