@@ -119,7 +119,7 @@ for (t in 90:1000){ #907
       
       numCores <- detectCores()-1; registerDoParallel(numCores) # set up parallel computing
       ptm = proc.time()
-      out = DMD(tR,xR,yR,tO,xO,yO,mO,xT=xO)
+      out = OCHd(tR,xR,yR,tO,xO,yO,mO,xT=xO)
       MISE[1,t,d,p] = compute_MISE(out$dens1, out$dens0,out$y[2]-out$y[1],out$y,yOt,b1,b0)
       Time[1,t,d,p] = (proc.time() - ptm)[3]
       stopImplicitCluster()
